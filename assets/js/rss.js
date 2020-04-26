@@ -15,12 +15,8 @@ rssUrl.forEach((url) => {
     parser.parseURL(url, (err, feed) => {
         if (err) throw err;
 
-        const sortedFeed = feed.items.sort((a, b) => {
+        let requests = feed.items.map((item) => {
             blogCount++;
-            return new Date(b.isoDate) - new Date(a.isoDate);
-        });
-
-        let requests = sortedFeed.map((item) => {
             return new Promise((resolve) => {
                 blogListCollector(item, resolve);
             });
