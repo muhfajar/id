@@ -9798,6 +9798,20 @@ dl dd {
   margin-left: 1.5rem;
 }
 
+ul.blog {
+  list-style: none;
+  padding-left: 0;
+}
+
+ul.blog li {
+  padding: 0.1rem 0;
+}
+
+ul.blog li:first-child {
+  border-top: 0;
+  padding-top: 0;
+}
+
 /* Actions */
 ul.actions {
   display: -moz-flex;
