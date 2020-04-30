@@ -1,6 +1,6 @@
 const rssUrl = ["https://muhfajar.blog/posts/index.xml", "https://muhfajar.blog/id/posts/index.xml"];
 let parser = new RSSParser();
-let blogList = document.getElementById("blog-list");
+let blogList = document.querySelector("#blog > div > div > ul");
 let blogListData = [];
 let blogCount = 0;
 
@@ -23,19 +23,35 @@ rssUrl.forEach((url) => {
         });
 
         Promise.all(requests).then(() => {
-            if (blogListData.length === blogCount) {
-                blogListData.sort((a, b) => {
-                    return new Date(b.isoDate) - new Date(a.isoDate)
-                }).forEach((entry) => {
-                    const listItem = document.createElement("li");
-                    const itemLink = document.createElement("a");
+            blogListData.forEach((entry) => {
+                const listItem = document.createElement("li");
+                const itemLink = document.createElement("a");
+                itemLink.textContent = entry.title;
+                itemLink.setAttribute("href", entry.link);
+                itemLink.setAttribute("title", entry.pubDate);
+                listItem.setAttribute("class", "blog-list");
+                listItem.appendChild(itemLink);
+                blogList.appendChild(listItem);
+            });
 
-                    itemLink.textContent = entry.title;
-                    itemLink.setAttribute("href", entry.link);
-                    itemLink.setAttribute("title", entry.pubDate);
-                    listItem.appendChild(itemLink);
-                    blogList.appendChild(listItem);
-                });
+            let checkedBlogList = [];
+            let elem = document.querySelectorAll("#blog > div > div > ul > li");
+
+            [].slice.call(elem).sort((a, b) => {
+                const dateA = a.getElementsByTagName("a").item(0).getAttribute('title');
+                const dateB = b.getElementsByTagName("a").item(0).getAttribute('title');
+                return new Date(dateB) - new Date(dateA);
+            }).forEach(function (el) {
+                el.parentNode.appendChild(el)
+            });
+
+            for (let i = 0; i < elem.length; i++) {
+                let currentValue = elem[i].innerHTML;
+                if (checkedBlogList.indexOf(currentValue) !== -1) {
+                    blogList.removeChild(elem[i]);
+                } else {
+                    checkedBlogList.push(currentValue);
+                }
             }
         });
     });
