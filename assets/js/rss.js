@@ -1,4 +1,5 @@
-const rssUrl = ["https://muhfajar.blog/posts/index.xml", "https://muhfajar.blog/id/posts/index.xml"];
+const dt = + new Date();
+const rssUrl = ["https://muhfajar.blog/posts/index.xml?dt="+dt, "https://muhfajar.blog/id/posts/index.xml?dt="+dt];
 let parser = new RSSParser();
 let blogList = document.querySelector("#blog > div > div > ul");
 let blogListData = [];
