@@ -1,5 +1,5 @@
 const dt = + new Date();
-const rssUrl = ["https://muhfajar.blog/posts/index.xml?dt="+dt, "https://muhfajar.blog/id/posts/index.xml?dt="+dt];
+const rssUrl = ["https://cdn.weeknd.dev/muhfajar/blog/rss/en.xml?dt="+dt, "https://cdn.weeknd.dev/muhfajar/blog/rss/id.xml?dt="+dt];
 
 let parser = new RSSParser();
 let blogList = document.querySelector("#blog > div > div > ul");
