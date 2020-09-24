@@ -1,5 +1,5 @@
 const dt = +new Date();
-const rssUrl = ["https://blog-proxy-cors.muhfajar.workers.dev/posts/index.xml?dt=" + dt, "https://blog-proxy-cors.muhfajar.workers.dev/id/posts/index.xml?dt=" + dt];
+const rssUrl = ["https://fetch.muhfajar.blog/posts/index.xml?dt=" + dt, "https://fetch.muhfajar.blog/id/posts/index.xml?dt=" + dt];
 
 let parser = new RSSParser();
 let blogList = document.querySelector("#blog > div > div > ul");
@@ -56,5 +56,5 @@ rssUrl.forEach((url) => {
                 }
             }
         });
-    });
+    }, {mode: "cors"});
 });
