@@ -34,7 +34,7 @@
 
 @mixin gradient-background($tint: false, $opacity: 0.25, $stop1: 25%, $stop2: 50%, $angle: 45deg) {
   $background-image: (
-          url('https://cdn.weeknd.dev/sgp1/id/images/overlay.png'),
+          url('https://cdn.muhfajar.workers.dev/sgp1/id/images/overlay.png'),
           linear-gradient($angle, transparentize(_palette(accent1), (1 - $opacity)) $stop1, transparentize(_palette(accent2), (1 - $opacity)) $stop2, transparentize(_palette(accent3), (1 - $opacity)))
   );
 
