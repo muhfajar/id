@@ -38,19 +38,19 @@
             font-style: normal;
             font-display: auto;
             font-weight: 400;
-            src: url("/assets/jetbrains-mono/JetBrainsMono-Regular.eot") format("eot"),
-            url("/assets/jetbrains-mono/JetBrainsMono-Regular.woff2") format("woff2"),
-            url("/assets/jetbrains-mono/JetBrainsMono-Regular.woff") format("woff");
+            src: url("https://cdn.muhfajar.id/sgp1/assets/webfonts/jetbrains-mono/JetBrainsMono-Regular.eot") format("eot"),
+            url("https://cdn.muhfajar.id/sgp1/assets/webfonts/jetbrains-mono/JetBrainsMono-Regular.woff2") format("woff2"),
+            url("https://cdn.muhfajar.id/sgp1/assets/webfonts/jetbrains-mono/JetBrainsMono-Regular.woff") format("woff");
         }
 
         @font-face {
             font-family: 'JetBrains Mono';
             font-style: normal;
             font-display: auto;
-            font-weight: bold;
-            src: url("/assets/jetbrains-mono/JetBrainsMono-Bold.eot") format("eot"),
-            url("/assets/jetbrains-mono/JetBrainsMono-Bold.woff2") format("woff2"),
-            url("/assets/jetbrains-mono/JetBrainsMono-Bold.woff") format("woff");
+            font-weight: 800;
+            src: url("https://cdn.muhfajar.id/sgp1/assets/webfonts/jetbrains-mono/JetBrainsMono-Bold.eot") format("eot"),
+            url("https://cdn.muhfajar.id/sgp1/assets/webfonts/jetbrains-mono/JetBrainsMono-Bold.woff2") format("woff2"),
+            url("https://cdn.muhfajar.id/sgp1/assets/webfonts/jetbrains-mono/JetBrainsMono-Bold.woff") format("woff");
         }
 
         body {
@@ -63,6 +63,7 @@
             align-items: center;
             flex-wrap: wrap;
             line-height: 1.5em;
+            background-color: #fafafa;
         }
 
         main {
@@ -87,7 +88,7 @@
         @media (min-width: 320px) and (max-width: 767px) {
             .main {
                 font-size: .8em;
-                width: 20em;
+                width: 25em;
             }
 
             .main li {
@@ -142,9 +143,12 @@
             font-weight: bold;
         }
 
+        .main span:first-of-type {
+            opacity: .9;
+        }
+
         .main .intro:hover {
-            color: rgb(42, 43, 46);
-            opacity: 1;
+            opacity: .9;
         }
 
         .main .intro a {
@@ -158,12 +162,15 @@
         .main .red {
             color: #fe5186;
             font-weight: bold;
+            text-decoration: none;
         }
 
         .footer {
             color: rgba(60, 63, 65, 0.66);
             margin-top: .8em;
             font-size: .8em;
+            position: absolute;
+            bottom: 1em;
         }
 
         .footer a {
@@ -175,47 +182,36 @@
 <body>
 <main>
     <div class="main">
-        <div class="comment">---</div>
+        <div class="comment">/* ---</div>
         <div class="break"></div>
         <a href="/" class="email" id="email">
             hi at muhfajar dot id
         </a>
         <span class="intro">
-            Hello, my name is <strong>Fajar,</strong> Software engineer from <strong>Indonesia</strong>. I currently work as a tech lead for
+            My name is <strong>Muhamad Fajar,</strong> Software engineer from <strong>Indonesia</strong>.
+            I currently work as a tech lead for
             <a href="https://go-tix.id">GoTix</a> at <a href="https://loket.com">Lokét</a>,
             previously venturing at <a href="https://softwareseni.com">SoftwareSeni</a> and
             <a href="https://talenesia.com">Talenesia</a>. On my daily –developer-activity– I’m
             using <strong>Go</strong>, <strong>Python</strong>, <strong>Ruby</strong> or other.
         </span>
-        <span class="red">
-            /uhd&bull;ven&bull;chr/
-        </span>
         <span class="intro">
-            Since beginning my journey as a full-stack engineer nearly
+            <u class="red">/uhd&bull;ven&bull;chr/</u>
+            Since the beginning of my journey as a full-stack engineer nearly
             <!--suppress JSCheckFunctionSignatures -->
             <script>document.write(new Date().getFullYear() - 2011)</script>
             years ago, I've done remote work for companies and collaborated
             in a team to create products for both business and consumer use.
             I have been lucky enough to work with incredibly talented people.
+            See other stories on my <a href="https://www.muhfajar.blog/">blog</a>.
         </span>
-        <span class="red">
-            /con&bull;tact/
-        </span>
-        <span class="intro">
-            If you should desire to contact me to collaborate on crafting amazing experience for people
-            - you are very welcome to contact me. You can reach me via email or you can contact me via my social media account.
-        </span>
-        <ul class="socmed">
-            <li><a href="https://twitter.com/__muhfajar">@twitter</a></li>
-            <li><a href="https://instagram.com/__muhfajar">@instagram</a></li>
-            <li><a href="https://github.com/muhfajar">@github</a></li>
-            <li><a href="https://www.linkedin.com/muhfajar">@linkedin</a></li>
-        </ul>
+        <div class="comment">--- */</div>
     </div>
     <div class="break"></div>
     <div class="footer">
-        <a href="https://creativecommons.org/licenses/by-nc/4.0/">CC BY-NC 4.0</a> &bull; <a href="/" id="git">Latest
-        Changes</a>
+        &copy <!--suppress JSCheckFunctionSignatures --><script>document.write(new Date().getFullYear())</script> &bull;
+        <a href="https://creativecommons.org/licenses/by-nc/4.0/">CC BY-NC 4.0</a> &bull;
+        <a href="/" id="git">Latest Changes</a>
     </div>
 </main>
 
