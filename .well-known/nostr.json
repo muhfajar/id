@@ -4,10 +4,12 @@
   },
   "relays": {
     "ea50253c492ef1f01a90f2efe6ce9aaf3a87645259a6798041806d02b8fb640e": [
+      "wss://relay.nostr.band",
+      "wss://relay.nostr.info",
       "wss://relay.snort.social",
       "wss://relay.damus.io",
+      "wss://relay.plebstr.com",
       "wss://relay.mostr.pub",
-      "wss://relay.arsip.my.id",
       "wss://relay.current.fyi",
       "wss://offchain.pub",
       "wss://brb.io",
