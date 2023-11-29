@@ -33,7 +33,20 @@
 
     <title>Muhamad Fajar</title>
 
+    <script>
+        function obfuscateEmail(user, domain) {
+            var email = user + "@" + domain;
+            var obfuscated = "";
+            for (var i = 0; i < email.length; i++) {
+                obfuscated += "&#" + email.charCodeAt(i) + ";";
+            }
+
+            return obfuscated;
+        }
+    </script>
+
     <script src="https://cdn.muhfajar.id/assets/glitch/v1/js/tailwind-3.1.3.js"></script>
+    <link rel="stylesheet" href="https://www.muhfajar.blog/css/microtip.css">
 </head>
 <body class="bg-white dark:bg-gray-600 mx-auto my-auto antialiased">
     <div class="px-10 sm:px-10 max-w-2xl">
@@ -92,12 +105,16 @@
                 <p class="text-base">Name is <span class="font-bold">Muhamad Fajar</span> <span class="italic">/fa&bull;jar/</span>. Software engineer based in
                 <a href="https://en.wikipedia.org/wiki/Indonesia" class="underline decoration-lime-500" target="_blank">Indonesia</a>. He currently works at
                 <a href="https://loket.com" class="underline decoration-sky-500" target="_blank">Lokét</a> as a technical lead for
-                <a href="https://go-tix.id" class="underline decoration-pink-500" target="_blank">GoTix</a>.
-                If you need to contact him, you can reach him at <span class="italic">contact at this domain</span>.</p>
+                <a class="underline decoration-pink-500" aria-label="Lokét App, and Screen Team" data-microtip-position="top" role="tooltip">Team X</a>.
+                If you need to contact him, you can reach him at <span id="obfuscatedEmail" class="italic underline decoration-red-600">contact at muhfajar dot email</span>.</p>
                 <p class="my-5 text-xs"><a href="https://www.muhfajar.blog" class="underline decoration-slate-400">blog</a> &bull;
                     <a href="https://link.muhfajar.id/nostr" class="underline decoration-slate-400" target="_blank">nostr</a> &bull;
                     <a href="https://link.muhfajar.id/resume" class="underline decoration-slate-400" target="_blank">resumé</a> &bull;
                     <a href="http://pgp.mit.edu/pks/lookup?search=muhfajar.email" class="underline decoration-slate-400" target="_blank">gpg</a></p>
+
+                <script>
+                    document.getElementById("obfuscatedEmail").innerHTML = obfuscateEmail("contact", "muhfajar.email");
+                </script>
             </div>
         </article>
     </div>
