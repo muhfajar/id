@@ -35,9 +35,9 @@
 
         <script>
             function obfuscateEmail(user, domain) {
-                var email = user + "@" + domain;
-                var obfuscated = "";
-                for (var i = 0; i < email.length; i++) {
+                const email = user + "@" + domain;
+                let obfuscated = "";
+                for (let i = 0; i < email.length; i++) {
                     obfuscated += "&#" + email.charCodeAt(i) + ";";
                 }
 
@@ -354,7 +354,7 @@ c2 25 -3 39 -23 59 -25 25 -30 26 -98 21 -143 -12 -296 -117 -361 -246 -32
                     <p class="my-5 text-xs"><a href="https://www.muhfajar.blog" class="underline decoration-slate-400">blog</a> &bull;
                         <a href="https://link.muhfajar.id/nostr" class="underline decoration-slate-400" target="_blank">nostr</a> &bull;
                         <a href="https://link.muhfajar.id/resume" class="underline decoration-slate-400" target="_blank">resumé</a> &bull;
-                        <a href="http://pgp.mit.edu/pks/lookup?search=muhfajar.email" class="underline decoration-slate-400" target="_blank">gpg</a></p>
+                        <a href="https://pgp.mit.edu/pks/lookup?search=muhfajar.email" class="underline decoration-slate-400" target="_blank">gpg</a></p>
 
                     <script>
                         document.getElementById("obfuscatedEmail").innerHTML = obfuscateEmail("contact", "muhfajar.email");
