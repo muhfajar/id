@@ -350,14 +350,39 @@ c2 25 -3 39 -23 59 -25 25 -30 26 -98 21 -143 -12 -296 -117 -361 -246 -32
                         <a class="underline decoration-amber-400" aria-label="Movie ticket aggregator" data-microtip-position="top" role="tooltip" href="https://scrn.link/">Screen</a> at
                         <a href="https://loket.com" class="underline decoration-sky-500" target="_blank">LOKÉT</a>,
                         where he’s fostering collaboration and building seamless digital experiences. With years of experience under his belt, Fajar is always eager to explore new technologies and push boundaries.
-                        If you need to contact him, you can reach him at <span id="obfuscatedEmail" class="italic underline decoration-red-600">contact at muhfajar dot email</span>.</p>
+                        If you need to contact him, you can reach him at <span id="obfuscatedEmail" class="italic underline decoration-red-600"></span>.</p>
                     <p class="my-5 text-xs"><a href="https://www.muhfajar.blog" class="underline decoration-slate-400">blog</a> &bull;
                         <a href="https://link.muhfajar.id/nostr" class="underline decoration-slate-400" target="_blank">nostr</a> &bull;
                         <a href="https://link.muhfajar.id/resume" class="underline decoration-slate-400" target="_blank">resumé</a> &bull;
                         <a href="https://pgp.mit.edu/pks/lookup?search=muhfajar.email" class="underline decoration-slate-400" target="_blank">gpg</a></p>
 
                     <script>
-                        document.getElementById("obfuscatedEmail").innerHTML = obfuscateEmail("contact", "muhfajar.email");
+                        window.onload = () => {
+                            let emailSpan = document.getElementById("obfuscatedEmail");
+
+                            // Remove the class while loading
+                            emailSpan.classList.remove("italic", "underline", "decoration-red-600");
+
+                            // Random character generator
+                            function getRandomChar() {
+                                const chars = "01ΔΣΨΦΞ#@!*%$&+-/=<>^~?|▓▒░█▄▀";
+                                return chars[Math.floor(Math.random() * chars.length)];
+                            }
+
+                            // Matrix animation effect
+                            let matrixInterval = setInterval(() => {
+                                emailSpan.innerHTML = Array(20).fill(0).map(getRandomChar).join("");
+                            }, 150); // Changes every 150ms for fast animation
+
+                            // Reveal email after 3 seconds
+                            setTimeout(() => {
+                                clearInterval(matrixInterval); // Stop animation
+                                document.getElementById("obfuscatedEmail").innerHTML = obfuscateEmail("contact", "muhfajar.email");
+
+                                // Restore the class after revealing the email
+                                emailSpan.classList.add("italic", "underline", "decoration-red-600");
+                            }, 3000); // Delay for 3 seconds
+                        };
                     </script>
                 </div>
             </article>
@@ -381,7 +406,7 @@ c2 25 -3 39 -23 59 -25 25 -30 26 -98 21 -143 -12 -296 -117 -361 -246 -32
                         if (response.status !== 200) {
                             console.log('Looks like there was a problem. Status Code: ' +
                                 response.status);
-                            return;
+                            return ;
                         }
 
                         response.json().then(function (data) {
