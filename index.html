@@ -364,9 +364,16 @@ c2 25 -3 39 -23 59 -25 25 -30 26 -98 21 -143 -12 -296 -117 -361 -246 -32
                             emailSpan.classList.remove("italic", "underline", "decoration-red-600");
 
                             // Random character generator
+                            function decodeHtmlEntities(html) {
+                                const parser = new DOMParser();
+                                const doc = parser.parseFromString(html, "text/html");
+                                return doc.documentElement.textContent;
+                            }
+
                             function getRandomChar() {
-                                const chars = "01ΔΣΨΦΞ#@!*%$&+-/=<>^~?|▓▒░█▄▀";
-                                return chars[Math.floor(Math.random() * chars.length)];
+                                const chars = "&#48;&#49;&#916;&#931;&#936;&#934;&#926;&#35;&#64;&#33;&#42;&#37;&#36;&#38;&#43;&#45;&#47;&#61;&#60;&#62;&#94;&#126;&#63;&#124;&#9619;&#9618;&#9617;&#9608;&#9604;&#9619;";
+                                const decodedString = decodeHtmlEntities(chars);
+                                return decodedString[Math.floor(Math.random() * decodedString.length)];
                             }
 
                             // Matrix animation effect
