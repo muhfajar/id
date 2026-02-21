@@ -1,322 +1,330 @@
 <!doctype html>
 <html class="flex w-full h-full" lang="en">
-    <head>
-        <meta charset="utf-8">
-        <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no"/>
-        <meta http-equiv=x-ua-compatible content="ie=edge"/>
 
-        <meta property="og:title" content="Muhamad Fajar">
-        <meta property="og:image" content="https://cdn.muhfajar.id/assets/og/muhfajar.jpg">
-        <meta property="og:image:width" content="1280"/>
-        <meta property="og:image:height" content="720"/>
-        <meta property="og:description" content="Muhamad Fajar — Software Engineer.">
-        <meta property="og:url" content="https://www.muhfajar.id/">
-        <meta property="og:type" content="website"/>
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="x-ua-compatible" content="ie=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="referrer" content="strict-origin-when-cross-origin">
+    <meta name="author" content="Muhamad Fajar" />
+    <meta name="description" content="Muhamad Fajar — Software Engineer." />
+    <meta name="keywords" content="muhamad fajar, software engineer, indonesia" />
+    <meta name="robots" content="index, follow" />
 
-        <meta name="twitter:card" content="summary_large_image">
-        <meta name="twitter:site" content="@mufajar_"/>
+    <meta property="og:site_name" content="Muhamad Fajar">
+    <meta property="og:title" content="Muhamad Fajar">
+    <meta property="og:description" content="Muhamad Fajar — Software Engineer.">
+    <meta property="og:url" content="https://www.muhfajar.id/">
+    <meta property="og:type" content="website" />
+    <meta property="og:image" content="https://cdn.muhfajar.id/assets/og/muhfajar.jpg">
+    <meta property="og:image:width" content="1280" />
+    <meta property="og:image:height" content="720" />
+    <meta property="og:image:alt" content="Muhamad Fajar">
 
-        <meta name="author" content="Muhamad Fajar"/>
-        <meta name="description" content="Muhamad Fajar — Software Engineer."/>
-        <meta name="keywords" content="muhamad fajar"/>
-        <meta name="robots" content="noodp"/>
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:site" content="@mufajar_" />
+    <meta name="twitter:creator" content="@mufajar_" />
+    <meta name="twitter:title" content="Muhamad Fajar">
+    <meta name="twitter:description" content="Muhamad Fajar — Software Engineer.">
+    <meta name="twitter:image" content="https://cdn.muhfajar.id/assets/og/muhfajar.jpg">
 
-        <link rel="canonical" href="https://www.muhfajar.id"/>
-        <link rel="apple-touch-icon" sizes="180x180" href="https://www.muhfajar.id/apple-touch-icon.png"/>
-        <link rel="icon" type="image/png" sizes="32x32" href="https://www.muhfajar.id/favicon-32x32.png"/>
-        <link rel="icon" type="image/png" sizes="16x16" href="https://www.muhfajar.id/favicon-16x16.png"/>
-        <link rel="manifest" href="https://www.muhfajar.id/site.webmanifest"/>
-        <link rel="mask-icon" href="https://www.muhfajar.id/safari-pinned-tab.svg" color="white"/>
-        <link rel="shortcut icon" href="https://www.muhfajar.id/favicon.ico"/>
-        <meta name="msapplication-TileColor" content="white"/>
-        <meta name="theme-color" content="white"/>
+    <link rel="canonical" href="https://www.muhfajar.id" />
+    <link rel="apple-touch-icon" sizes="180x180" href="https://www.muhfajar.id/apple-touch-icon.png" />
+    <link rel="icon" type="image/png" sizes="32x32" href="https://www.muhfajar.id/favicon-32x32.png" />
+    <link rel="icon" type="image/png" sizes="16x16" href="https://www.muhfajar.id/favicon-16x16.png" />
+    <link rel="manifest" href="https://www.muhfajar.id/site.webmanifest" />
+    <link rel="mask-icon" href="https://www.muhfajar.id/safari-pinned-tab.svg" color="#ffffff" />
+    <link rel="shortcut icon" href="https://www.muhfajar.id/favicon.ico" />
+    <meta name="msapplication-TileColor" content="#ffffff" />
+    <meta name="theme-color" content="#ffffff" />
 
-        <title>Muhamad Fajar</title>
+    <title>Muhamad Fajar</title>
 
-        <script>
-            function obfuscateEmail(user, domain) {
-                const email = user + "@" + domain;
-                let obfuscated = "";
-                for (let i = 0; i < email.length; i++) {
-                    obfuscated += "&#" + email.charCodeAt(i) + ";";
-                }
-
-                return obfuscated;
-            }
-        </script>
-
-        <style>
-            body {
-                font-family: ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, "Liberation Mono", "Courier New", monospace;
+    <script>
+        function obfuscateEmail(user, domain) {
+            const email = user + "@" + domain;
+            let obfuscated = "";
+            for (let i = 0; i < email.length; i++) {
+                obfuscated += "&#" + email.charCodeAt(i) + ";";
             }
 
-            @keyframes hero-gradient-animation {
-                0% {
-                    --y-0: 90%;
-                    --s-start-0: 1%;
-                    --s-end-0: 61%;
-                    --x-0: 91%;
-                    --c-0: hsla(97, 2%, 11%, 1);
-                    --x-1: 17%;
-                    --y-1: 24%;
-                    --s-start-1: 0%;
-                    --s-end-1: 55%;
-                    --c-1: hsla(75, 0%, 0%, 1);
-                    --y-2: 32%;
-                    --s-start-2: 19%;
-                    --s-end-2: 54%;
-                    --x-2: 11%;
-                    --c-2: hsla(248, 37%, 20%, 1);
-                    --y-3: 31%;
-                    --x-3: 2%;
-                    --c-3: hsla(330, 86%, 51%, 1);
-                    --s-start-3: 0%;
-                    --s-end-3: 67%;
-                    --x-4: 74%;
-                    --y-4: 93%;
-                    --s-start-4: 12%;
-                    --s-end-4: 82%;
-                    --c-4: hsla(349, 0%, 0%, 1);
-                }
+            return obfuscated;
+        }
+    </script>
 
-                100% {
-                    --y-0: 25%;
-                    --s-start-0: 19%;
-                    --s-end-0: 69%;
-                    --x-0: 49%;
-                    --c-0: hsla(313, 0%, 0%, 1);
-                    --x-1: 1%;
-                    --y-1: 41%;
-                    --s-start-1: 3%;
-                    --s-end-1: 77%;
-                    --c-1: hsla(0, 0%, 0%, 1);
-                    --y-2: 93%;
-                    --s-start-2: 6%;
-                    --s-end-2: 73%;
-                    --x-2: 44%;
-                    --c-2: hsla(321, 0%, 0%, 1);
-                    --y-3: 51%;
-                    --x-3: 97%;
-                    --c-3: hsla(0, 0%, 0%, 1);
-                    --s-start-3: 8%;
-                    --s-end-3: 86%;
-                    --x-4: 10%;
-                    --y-4: 69%;
-                    --s-start-4: 20%;
-                    --s-end-4: 75%;
-                    --c-4: hsla(109, 0%, 0%, 1);
-                }
-            }
+    <style>
+        body {
+            font-family: ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, "Liberation Mono", "Courier New", monospace;
+        }
 
-            @property --y-0 {
-                syntax: '<percentage>';
-                inherits: false;
-                initial-value: 90%
-            }
-
-            @property --s-start-0 {
-                syntax: '<percentage>';
-                inherits: false;
-                initial-value: 1%
-            }
-
-            @property --s-end-0 {
-                syntax: '<percentage>';
-                inherits: false;
-                initial-value: 61%
-            }
-
-            @property --x-0 {
-                syntax: '<percentage>';
-                inherits: false;
-                initial-value: 91%
-            }
-
-            @property --c-0 {
-                syntax: '<color>';
-                inherits: false;
-                initial-value: hsla(97, 2%, 11%, 1)
-            }
-
-            @property --x-1 {
-                syntax: '<percentage>';
-                inherits: false;
-                initial-value: 17%
-            }
-
-            @property --y-1 {
-                syntax: '<percentage>';
-                inherits: false;
-                initial-value: 24%
-            }
-
-            @property --s-start-1 {
-                syntax: '<percentage>';
-                inherits: false;
-                initial-value: 0%
-            }
-
-            @property --s-end-1 {
-                syntax: '<percentage>';
-                inherits: false;
-                initial-value: 55%
-            }
-
-            @property --c-1 {
-                syntax: '<color>';
-                inherits: false;
-                initial-value: hsla(75, 0%, 0%, 1)
-            }
-
-            @property --y-2 {
-                syntax: '<percentage>';
-                inherits: false;
-                initial-value: 32%
-            }
-
-            @property --s-start-2 {
-                syntax: '<percentage>';
-                inherits: false;
-                initial-value: 19%
-            }
-
-            @property --s-end-2 {
-                syntax: '<percentage>';
-                inherits: false;
-                initial-value: 54%
-            }
-
-            @property --x-2 {
-                syntax: '<percentage>';
-                inherits: false;
-                initial-value: 11%
-            }
-
-            @property --c-2 {
-                syntax: '<color>';
-                inherits: false;
-                initial-value: hsla(248, 37%, 20%, 1)
-            }
-
-            @property --y-3 {
-                syntax: '<percentage>';
-                inherits: false;
-                initial-value: 31%
-            }
-
-            @property --x-3 {
-                syntax: '<percentage>';
-                inherits: false;
-                initial-value: 2%
-            }
-
-            @property --c-3 {
-                syntax: '<color>';
-                inherits: false;
-                initial-value: hsla(330, 86%, 51%, 1)
-            }
-
-            @property --s-start-3 {
-                syntax: '<percentage>';
-                inherits: false;
-                initial-value: 0%
-            }
-
-            @property --s-end-3 {
-                syntax: '<percentage>';
-                inherits: false;
-                initial-value: 67%
-            }
-
-            @property --x-4 {
-                syntax: '<percentage>';
-                inherits: false;
-                initial-value: 74%
-            }
-
-            @property --y-4 {
-                syntax: '<percentage>';
-                inherits: false;
-                initial-value: 93%
-            }
-
-            @property --s-start-4 {
-                syntax: '<percentage>';
-                inherits: false;
-                initial-value: 12%
-            }
-
-            @property --s-end-4 {
-                syntax: '<percentage>';
-                inherits: false;
-                initial-value: 82%
-            }
-
-            @property --c-4 {
-                syntax: '<color>';
-                inherits: false;
-                initial-value: hsla(349, 0%, 0%, 1)
-            }
-
-            .gradient-background {
+        @keyframes hero-gradient-animation {
+            0% {
                 --y-0: 90%;
+                --s-start-0: 1%;
+                --s-end-0: 61%;
                 --x-0: 91%;
                 --c-0: hsla(97, 2%, 11%, 1);
                 --x-1: 17%;
                 --y-1: 24%;
+                --s-start-1: 0%;
+                --s-end-1: 55%;
                 --c-1: hsla(75, 0%, 0%, 1);
                 --y-2: 32%;
+                --s-start-2: 19%;
+                --s-end-2: 54%;
                 --x-2: 11%;
                 --c-2: hsla(248, 37%, 20%, 1);
                 --y-3: 31%;
                 --x-3: 2%;
                 --c-3: hsla(330, 86%, 51%, 1);
+                --s-start-3: 0%;
+                --s-end-3: 67%;
                 --x-4: 74%;
                 --y-4: 93%;
-                --c-4: hsla(349, 0%, 0%, 1);;
-                background-color: hsla(356, 0%, 0%, 1);
-                background-image: radial-gradient(circle at var(--x-0) var(--y-0), var(--c-0) var(--s-start-0), transparent var(--s-end-0)), radial-gradient(circle at var(--x-1) var(--y-1), var(--c-1) var(--s-start-1), transparent var(--s-end-1)), radial-gradient(circle at var(--x-2) var(--y-2), var(--c-2) var(--s-start-2), transparent var(--s-end-2)), radial-gradient(circle at var(--x-3) var(--y-3), var(--c-3) var(--s-start-3), transparent var(--s-end-3)), radial-gradient(circle at var(--x-4) var(--y-4), var(--c-4) var(--s-start-4), transparent var(--s-end-4));
-                animation: hero-gradient-animation 10s linear infinite alternate;
-                background-blend-mode: normal, normal, normal, normal, normal;
+                --s-start-4: 12%;
+                --s-end-4: 82%;
+                --c-4: hsla(349, 0%, 0%, 1);
             }
 
-            .shadow-text {
-                text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.25);
+            100% {
+                --y-0: 25%;
+                --s-start-0: 19%;
+                --s-end-0: 69%;
+                --x-0: 49%;
+                --c-0: hsla(313, 0%, 0%, 1);
+                --x-1: 1%;
+                --y-1: 41%;
+                --s-start-1: 3%;
+                --s-end-1: 77%;
+                --c-1: hsla(0, 0%, 0%, 1);
+                --y-2: 93%;
+                --s-start-2: 6%;
+                --s-end-2: 73%;
+                --x-2: 44%;
+                --c-2: hsla(321, 0%, 0%, 1);
+                --y-3: 51%;
+                --x-3: 97%;
+                --c-3: hsla(0, 0%, 0%, 1);
+                --s-start-3: 8%;
+                --s-end-3: 86%;
+                --x-4: 10%;
+                --y-4: 69%;
+                --s-start-4: 20%;
+                --s-end-4: 75%;
+                --c-4: hsla(109, 0%, 0%, 1);
             }
+        }
 
-            .shadow-svg {
-                filter: drop-shadow(1px 1px 2px rgba(0, 0, 0, 0.25));
-            }
-        </style>
+        @property --y-0 {
+            syntax: '<percentage>';
+            inherits: false;
+            initial-value: 90%
+        }
 
-        <script src="https://cdn.muhfajar.id/assets/glitch/v1/js/tailwind-3.1.3.js"></script>
-        <link rel="stylesheet" href="https://cdn.muhfajar.id/assets/css/microtip.css">
+        @property --s-start-0 {
+            syntax: '<percentage>';
+            inherits: false;
+            initial-value: 1%
+        }
 
-    </head>
-    <body class="gradient-background shadow-text shadow-svg mx-auto my-auto antialiased">
-        <div class="px-10 sm:px-10 max-w-2xl">
-            <div class="py-5 mx-[-7px]">
-                <a href="https://kbbi.web.id/fajar" target="_blank">
-                    <svg version="1.0" xmlns="http://www.w3.org/2000/svg"
-                         height="5em" viewBox="0 0 346.000000 264.000000" class="fill-black dark:fill-slate-100"
-                         preserveAspectRatio="xMidYMid meet">
-                        <metadata>
-                            Created by potrace 1.15, written by Peter Selinger 2001-2017
-                        </metadata>
-                        <g transform="translate(0.000000,264.000000) scale(0.100000,-0.100000)" stroke="none">
-                            <path d="M321 2389 c-18 -7 -21 -13 -15 -27 5 -9 9 -149 9 -311 l0 -294 -30
+        @property --s-end-0 {
+            syntax: '<percentage>';
+            inherits: false;
+            initial-value: 61%
+        }
+
+        @property --x-0 {
+            syntax: '<percentage>';
+            inherits: false;
+            initial-value: 91%
+        }
+
+        @property --c-0 {
+            syntax: '<color>';
+            inherits: false;
+            initial-value: hsla(97, 2%, 11%, 1)
+        }
+
+        @property --x-1 {
+            syntax: '<percentage>';
+            inherits: false;
+            initial-value: 17%
+        }
+
+        @property --y-1 {
+            syntax: '<percentage>';
+            inherits: false;
+            initial-value: 24%
+        }
+
+        @property --s-start-1 {
+            syntax: '<percentage>';
+            inherits: false;
+            initial-value: 0%
+        }
+
+        @property --s-end-1 {
+            syntax: '<percentage>';
+            inherits: false;
+            initial-value: 55%
+        }
+
+        @property --c-1 {
+            syntax: '<color>';
+            inherits: false;
+            initial-value: hsla(75, 0%, 0%, 1)
+        }
+
+        @property --y-2 {
+            syntax: '<percentage>';
+            inherits: false;
+            initial-value: 32%
+        }
+
+        @property --s-start-2 {
+            syntax: '<percentage>';
+            inherits: false;
+            initial-value: 19%
+        }
+
+        @property --s-end-2 {
+            syntax: '<percentage>';
+            inherits: false;
+            initial-value: 54%
+        }
+
+        @property --x-2 {
+            syntax: '<percentage>';
+            inherits: false;
+            initial-value: 11%
+        }
+
+        @property --c-2 {
+            syntax: '<color>';
+            inherits: false;
+            initial-value: hsla(248, 37%, 20%, 1)
+        }
+
+        @property --y-3 {
+            syntax: '<percentage>';
+            inherits: false;
+            initial-value: 31%
+        }
+
+        @property --x-3 {
+            syntax: '<percentage>';
+            inherits: false;
+            initial-value: 2%
+        }
+
+        @property --c-3 {
+            syntax: '<color>';
+            inherits: false;
+            initial-value: hsla(330, 86%, 51%, 1)
+        }
+
+        @property --s-start-3 {
+            syntax: '<percentage>';
+            inherits: false;
+            initial-value: 0%
+        }
+
+        @property --s-end-3 {
+            syntax: '<percentage>';
+            inherits: false;
+            initial-value: 67%
+        }
+
+        @property --x-4 {
+            syntax: '<percentage>';
+            inherits: false;
+            initial-value: 74%
+        }
+
+        @property --y-4 {
+            syntax: '<percentage>';
+            inherits: false;
+            initial-value: 93%
+        }
+
+        @property --s-start-4 {
+            syntax: '<percentage>';
+            inherits: false;
+            initial-value: 12%
+        }
+
+        @property --s-end-4 {
+            syntax: '<percentage>';
+            inherits: false;
+            initial-value: 82%
+        }
+
+        @property --c-4 {
+            syntax: '<color>';
+            inherits: false;
+            initial-value: hsla(349, 0%, 0%, 1)
+        }
+
+        .gradient-background {
+            --y-0: 90%;
+            --x-0: 91%;
+            --c-0: hsla(97, 2%, 11%, 1);
+            --x-1: 17%;
+            --y-1: 24%;
+            --c-1: hsla(75, 0%, 0%, 1);
+            --y-2: 32%;
+            --x-2: 11%;
+            --c-2: hsla(248, 37%, 20%, 1);
+            --y-3: 31%;
+            --x-3: 2%;
+            --c-3: hsla(330, 86%, 51%, 1);
+            --x-4: 74%;
+            --y-4: 93%;
+            --c-4: hsla(349, 0%, 0%, 1);
+            ;
+            background-color: hsla(356, 0%, 0%, 1);
+            background-image: radial-gradient(circle at var(--x-0) var(--y-0), var(--c-0) var(--s-start-0), transparent var(--s-end-0)), radial-gradient(circle at var(--x-1) var(--y-1), var(--c-1) var(--s-start-1), transparent var(--s-end-1)), radial-gradient(circle at var(--x-2) var(--y-2), var(--c-2) var(--s-start-2), transparent var(--s-end-2)), radial-gradient(circle at var(--x-3) var(--y-3), var(--c-3) var(--s-start-3), transparent var(--s-end-3)), radial-gradient(circle at var(--x-4) var(--y-4), var(--c-4) var(--s-start-4), transparent var(--s-end-4));
+            animation: hero-gradient-animation 10s linear infinite alternate;
+            background-blend-mode: normal, normal, normal, normal, normal;
+        }
+
+        .shadow-text {
+            text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.25);
+        }
+
+        .shadow-svg {
+            filter: drop-shadow(1px 1px 2px rgba(0, 0, 0, 0.25));
+        }
+    </style>
+
+    <script src="https://cdn.muhfajar.id/assets/glitch/v1/js/tailwind-3.1.3.js"></script>
+    <link rel="stylesheet" href="https://cdn.muhfajar.id/assets/css/microtip.css">
+
+</head>
+
+<body class="gradient-background shadow-text shadow-svg mx-auto my-auto antialiased">
+    <div class="px-10 sm:px-10 max-w-2xl">
+        <div class="py-5 mx-[-7px]">
+            <a href="https://kbbi.web.id/fajar" target="_blank">
+                <svg version="1.0" xmlns="http://www.w3.org/2000/svg" height="5em" viewBox="0 0 346.000000 264.000000"
+                    class="fill-black dark:fill-slate-100" preserveAspectRatio="xMidYMid meet">
+                    <metadata>
+                        Created by potrace 1.15, written by Peter Selinger 2001-2017
+                    </metadata>
+                    <g transform="translate(0.000000,264.000000) scale(0.100000,-0.100000)" stroke="none">
+                        <path d="M321 2389 c-18 -7 -21 -13 -15 -27 5 -9 9 -149 9 -311 l0 -294 -30
 -10 c-53 -18 -53 -42 1 -105 l33 -39 3 -585 3 -584 30 -60 c50 -98 134 -125
 223 -72 119 72 192 360 163 645 -21 206 -90 386 -214 559 -96 133 -97 129 48
 127 66 -1 132 -8 148 -14 15 -6 30 -9 33 -7 2 3 10 33 16 67 17 91 9 97 -140
 93 -64 -1 -129 -5 -144 -8 l-28 -6 0 287 c0 186 -4 293 -11 307 -10 19 -66 49
 -91 47 -7 0 -24 -5 -37 -10z m215 -1171 c61 -180 81 -340 65 -524 -17 -188
 -63 -309 -106 -274 -31 26 -35 86 -35 530 l1 445 21 -40 c12 -22 36 -83 54
-                                  -137z"/>
+                                  -137z" />
 
-                            <path d="M1533 2221 c-40 -25 -53 -49 -53 -101 0 -34 6 -48 34 -76 28 -28 42
-                                  -34 76 -34 55 0 96 30 111 80 30 99 -81 186 -168 131z"/>
+                        <path d="M1533 2221 c-40 -25 -53 -49 -53 -101 0 -34 6 -48 34 -76 28 -28 42
+                                  -34 76 -34 55 0 96 30 111 80 30 99 -81 186 -168 131z" />
 
-                            <path d="M2506 1888 c-43 -40 -38 -95 14 -152 l40 -43 -10 -131 c-16 -213 -49
+                        <path d="M2506 1888 c-43 -40 -38 -95 14 -152 l40 -43 -10 -131 c-16 -213 -49
 -334 -107 -394 -32 -34 -57 -35 -87 -5 -22 22 -23 32 -30 222 -6 182 -8 201
 -27 221 -23 24 -65 36 -98 27 -21 -5 -21 -9 -21 -203 l0 -197 -29 -41 c-79
 -108 -191 -35 -191 124 0 125 44 237 120 308 64 60 107 78 200 85 l75 6 3 32
@@ -339,106 +347,116 @@ c2 25 -3 39 -23 59 -25 25 -30 26 -98 21 -143 -12 -296 -117 -361 -246 -32
 -66 -32 -92 22 -95 148 -13 456 28 105 28 107 10 137 -29 48 -58 62 -126 62
 -107 0 -155 10 -164 35 -26 68 -124 98 -174 53z m-991 -1434 c-6 -37 -38 -69
 -60 -60 -9 3 -22 21 -30 41 -35 81 -4 211 69 293 l21 24 3 -134 c2 -73 0 -147
-                                  -3 -164z"/>
-                        </g>
-                    </svg>
-                </a>
-            </div>
-
-            <article>
-                <div class="text-base text-left font-light dark:text-slate-100 leading-relaxed pb-[100px]">
-                    <p class="text-base">Hey, I’m <span class="font-bold">Muhamad Fajar</span> <span class="italic">/fa&bull;jar/</span> — code wrangler, digital tinkerer,
-                        and full-time tech enthusiast based in <a href="https://en.wikipedia.org/wiki/Indonesia" class="underline decoration-lime-500" target="_blank">Indonesia</a>. By day, I lead the
-                        <a class="underline decoration-pink-500" aria-label="Event companion app" data-microtip-position="top" role="tooltip" href="https://www.loket.com/loket-x/">X</a>,
-                        <a class="underline decoration-violet-500" aria-label="OAuth2 service" data-microtip-position="top" role="tooltip" href="https://www.loket.com/login">Identity</a>, and
-                        <a class="underline decoration-amber-400" aria-label="Movie ticket aggregator" data-microtip-position="top" role="tooltip" href="https://screen.loket.com/">Screen</a> teams at
-                        <a href="https://loket.com" class="underline decoration-sky-500" target="_blank">LOKÉT</a> as a Technical Lead, crafting smooth, snappy, and user-loving experiences.
-                        With years of hands-on building and breaking (on purpose, I swear), I enjoy exploring new technologies and continuously learning, always curious about what’s possible.
-                        Got an idea, collab, or just wanna geek out? Hit me up: <span id="obfuscatedEmail" class="italic underline decoration-red-600"></span>.</p>
-                    <p class="my-5 text-xs"><a href="https://www.muhfajar.blog" class="underline decoration-slate-400">blog</a> &bull;
-                        <a href="https://link.muhfajar.id/nostr" class="underline decoration-slate-400" target="_blank">nostr</a> &bull;
-                        <a href="https://link.muhfajar.id/bsky" class="underline decoration-slate-400" target="_blank">bsky</a> &bull;
-                        <a href="https://link.muhfajar.id/resume" class="underline decoration-slate-400" target="_blank">resumé</a> &bull;
-                        <a href="https://pgp.mit.edu/pks/lookup?search=muhfajar.email" class="underline decoration-slate-400" target="_blank">gpg</a></p>
-
-                    <script>
-                        window.onload = () => {
-                            let emailSpan = document.getElementById("obfuscatedEmail");
-
-                            // Remove the class while loading
-                            emailSpan.classList.remove("italic", "underline", "decoration-red-600");
-
-                            // Random character generator
-                            function decodeHtmlEntities(html) {
-                                const parser = new DOMParser();
-                                const doc = parser.parseFromString(html, "text/html");
-                                return doc.documentElement.textContent;
-                            }
-
-                            function getRandomChar() {
-                                const chars = "&#48;&#49;&#916;&#931;&#936;&#934;&#926;&#35;&#64;&#33;&#42;&#37;&#36;&#38;&#43;&#45;&#47;&#61;&#60;&#62;&#94;&#126;&#63;&#124;&#9619;&#9618;&#9617;&#9608;&#9604;&#9619;";
-                                const decodedString = decodeHtmlEntities(chars);
-                                return decodedString[Math.floor(Math.random() * decodedString.length)];
-                            }
-
-                            // Matrix animation effect
-                            let matrixInterval = setInterval(() => {
-                                emailSpan.innerHTML = Array(20).fill(0).map(getRandomChar).join("");
-                            }, 150); // Changes every 150ms for fast animation
-
-                            // Reveal email after 3 seconds
-                            setTimeout(() => {
-                                clearInterval(matrixInterval); // Stop animation
-
-                                const userAgent = navigator.userAgent;
-                                const commonBrowsers = ["Chrome", "Firefox", "Safari", "Edge", "Opera"];
-                                if (commonBrowsers.some(browser => userAgent.includes(browser))) {
-                                    document.getElementById("obfuscatedEmail").innerHTML = obfuscateEmail("contact", "muhfajar.email");
-                                }
-
-                                // Restore the class after revealing the email
-                                emailSpan.classList.add("italic", "underline", "decoration-red-600");
-                            }, 3000); // Delay for 3 seconds
-                        };
-                    </script>
-                </div>
-            </article>
+                                  -3 -164z" />
+                    </g>
+                </svg>
+            </a>
         </div>
 
+        <article>
+            <div class="text-base text-left font-light dark:text-slate-100 leading-relaxed pb-[100px]">
+                <p class="text-base">Hey, I’m <span class="font-bold">Muhamad Fajar</span> <span
+                        class="italic">/fa&bull;jar/</span> — code wrangler, digital tinkerer,
+                    and full-time tech enthusiast based in <a href="https://en.wikipedia.org/wiki/Indonesia"
+                        class="underline decoration-lime-500" target="_blank">Indonesia</a>. By day, I lead the
+                    <a class="underline decoration-pink-500" aria-label="Event companion app"
+                        data-microtip-position="top" role="tooltip" href="https://www.loket.com/loket-x/">X</a>,
+                    <a class="underline decoration-violet-500" aria-label="OAuth2 service" data-microtip-position="top"
+                        role="tooltip" href="https://www.loket.com/login">Identity</a>, and
+                    <a class="underline decoration-amber-400" aria-label="Movie ticket aggregator"
+                        data-microtip-position="top" role="tooltip" href="https://screen.loket.com/">Screen</a> teams at
+                    <a href="https://loket.com" class="underline decoration-sky-500" target="_blank">LOKÉT</a> as a
+                    Technical Lead, crafting smooth, snappy, and user-loving experiences.
+                    With years of hands-on building and breaking (on purpose, I swear), I enjoy exploring new
+                    technologies and continuously learning, always curious about what’s possible.
+                    Got an idea, collab, or just wanna geek out? Hit me up: <span id="obfuscatedEmail"
+                        class="italic underline decoration-red-600"></span>
+                </p>
+                <p class="my-5 text-xs"><a href="https://www.muhfajar.blog"
+                        class="underline decoration-slate-400">blog</a> &bull;
+                    <a href="https://link.muhfajar.id/nostr" class="underline decoration-slate-400"
+                        target="_blank">nostr</a> &bull;
+                    <a href="https://link.muhfajar.id/bsky" class="underline decoration-slate-400"
+                        target="_blank">bsky</a> &bull;
+                    <a href="https://link.muhfajar.id/resume" class="underline decoration-slate-400"
+                        target="_blank">resumé</a> &bull;
+                    <a href="https://pgp.mit.edu/pks/lookup?search=muhfajar.email"
+                        class="underline decoration-slate-400" target="_blank">gpg</a>
+                </p>
 
-        <div class="absolute left-0 right-0 bottom-10">
-            <div class="text-xs text-center font-light dark:text-slate-100">
-                &copy <!--suppress JSCheckFunctionSignatures -->
-                <script>document.write(new Date().getFullYear())</script> &bull;
-                <a href="https://creativecommons.org/licenses/by-nc/4.0/" target="_blank">CC BY-NC 4.0</a> &bull;
-                <a href="https://github.com/muhfajar/id/commits/master" target="_blank" id="git" aria-label="Latest Changes" data-microtip-position="right" role="tooltip">Latest Changes</a>
-            </div>
-        </div>
-
-        <!-- git -->
-        <script>
-            fetch('https://api.github.com/repos/muhfajar/id/commits', {mode: "cors"})
-                .then(
-                    function (response) {
-                        if (response.status !== 200) {
-                            console.log('Looks like there was a problem. Status Code: ' +
-                                response.status);
-                            return ;
-                        }
-
-                        response.json().then(function (data) {
-                            let gitLink = document.getElementById("git");
-                            gitLink.href = data[0].html_url;
-                            gitLink.innerText = data[0].sha.substring(0, 7);
-                            return false;
-                        });
+                <script>
+                    function decode(encoded) {
+                        return atob(encoded).split('').reverse().join('');
                     }
-                )
-                .catch(function (err) {
-                    console.log('Fetch Error :-S', err);
-                });
-        </script>
+                </script>
 
-        <!-- Cloudflare Web Analytics --><script defer src='https://static.cloudflareinsights.com/beacon.min.js' data-cf-beacon='{"token": "5ed7a73fb0f24e9cb06b295908f045e1"}'></script><!-- End Cloudflare Web Analytics -->
-    </body>
+                <style>
+                    .email-link {
+                        transition: opacity 0.3s ease-in-out;
+                    }
+                </style>
+
+                <script>
+                    window.onload = () => {
+                        const emailSpan = document.getElementById("obfuscatedEmail");
+                        const secret = "bGlhbWUucmFqYWZodW1AdGNhdG5vYw==";
+
+                        // Matrix animation
+                        const chars = "01ΔΣΨΦΞ#@!*%$&+-/=<>^~?|▒▓░█▄";
+                        let matrixInterval = setInterval(() => {
+                            emailSpan.innerText = Array(20).fill(0).map(() => chars[Math.floor(Math.random() * chars.length)]).join("");
+                        }, 100);
+
+                        setTimeout(() => {
+                            clearInterval(matrixInterval);
+                            const decoded = decode(secret);
+                            emailSpan.innerHTML = `<a href="mailto:${decoded}" class="email-link">${decoded}</a>`;
+                            emailSpan.classList.add("italic", "underline", "decoration-red-600");
+                        }, 3000);
+                    };
+                </script>
+            </div>
+        </article>
+    </div>
+
+
+    <div class="absolute left-0 right-0 bottom-10">
+        <div class="text-xs text-center font-light dark:text-slate-100">
+            &copy <!--suppress JSCheckFunctionSignatures -->
+            <script>document.write(new Date().getFullYear())</script> &bull;
+            <a href="https://creativecommons.org/licenses/by-nc/4.0/" target="_blank">CC BY-NC 4.0</a> &bull;
+            <a href="https://github.com/muhfajar/id/commits/master" target="_blank" id="git" aria-label="Latest Changes"
+                data-microtip-position="right" role="tooltip">Latest Changes</a>
+        </div>
+    </div>
+
+    <!-- git -->
+    <script>
+        fetch('https://api.github.com/repos/muhfajar/id/commits', { mode: "cors" })
+            .then(
+                function (response) {
+                    if (response.status !== 200) {
+                        console.log('Looks like there was a problem. Status Code: ' +
+                            response.status);
+                        return;
+                    }
+
+                    response.json().then(function (data) {
+                        let gitLink = document.getElementById("git");
+                        gitLink.href = data[0].html_url;
+                        gitLink.innerText = data[0].sha.substring(0, 7);
+                        return false;
+                    });
+                }
+            )
+            .catch(function (err) {
+                console.log('Fetch Error :-S', err);
+            });
+    </script>
+
+    <!-- Cloudflare Web Analytics -->
+    <script defer src='https://static.cloudflareinsights.com/beacon.min.js'
+        data-cf-beacon='{"token": "5ed7a73fb0f24e9cb06b295908f045e1"}'></script><!-- End Cloudflare Web Analytics -->
+</body>
+
 </html>
