@@ -1,5 +1,5 @@
 <!doctype html>
-<html class="flex w-full h-full" lang="en">
+<html class="h-full" lang="en">
 
 <head>
     <meta charset="utf-8">
@@ -39,18 +39,6 @@
     <meta name="theme-color" content="#ffffff" />
 
     <title>Muhamad Fajar</title>
-
-    <script>
-        function obfuscateEmail(user, domain) {
-            const email = user + "@" + domain;
-            let obfuscated = "";
-            for (let i = 0; i < email.length; i++) {
-                obfuscated += "&#" + email.charCodeAt(i) + ";";
-            }
-
-            return obfuscated;
-        }
-    </script>
 
     <style>
         body {
@@ -281,7 +269,6 @@
             --x-4: 74%;
             --y-4: 93%;
             --c-4: hsla(349, 0%, 0%, 1);
-            ;
             background-color: hsla(356, 0%, 0%, 1);
             background-image: radial-gradient(circle at var(--x-0) var(--y-0), var(--c-0) var(--s-start-0), transparent var(--s-end-0)), radial-gradient(circle at var(--x-1) var(--y-1), var(--c-1) var(--s-start-1), transparent var(--s-end-1)), radial-gradient(circle at var(--x-2) var(--y-2), var(--c-2) var(--s-start-2), transparent var(--s-end-2)), radial-gradient(circle at var(--x-3) var(--y-3), var(--c-3) var(--s-start-3), transparent var(--s-end-3)), radial-gradient(circle at var(--x-4) var(--y-4), var(--c-4) var(--s-start-4), transparent var(--s-end-4));
             animation: hero-gradient-animation 10s linear infinite alternate;
@@ -295,168 +282,114 @@
         .shadow-svg {
             filter: drop-shadow(1px 1px 2px rgba(0, 0, 0, 0.25));
         }
+
+        .email-link {
+            transition: opacity 0.3s ease-in-out;
+        }
     </style>
 
     <script src="https://cdn.muhfajar.id/assets/glitch/v1/js/tailwind-3.1.3.js"></script>
     <link rel="stylesheet" href="https://cdn.muhfajar.id/assets/css/microtip.css">
-
 </head>
 
-<body class="gradient-background shadow-text shadow-svg mx-auto my-auto antialiased">
-    <div class="px-10 sm:px-10 max-w-2xl">
-        <div class="py-5 mx-[-7px]">
-            <a href="https://kbbi.web.id/fajar" target="_blank">
-                <svg version="1.0" xmlns="http://www.w3.org/2000/svg" height="5em" viewBox="0 0 346.000000 264.000000"
-                    class="fill-black dark:fill-slate-100" preserveAspectRatio="xMidYMid meet">
-                    <metadata>
-                        Created by potrace 1.15, written by Peter Selinger 2001-2017
-                    </metadata>
-                    <g transform="translate(0.000000,264.000000) scale(0.100000,-0.100000)" stroke="none">
-                        <path d="M321 2389 c-18 -7 -21 -13 -15 -27 5 -9 9 -149 9 -311 l0 -294 -30
--10 c-53 -18 -53 -42 1 -105 l33 -39 3 -585 3 -584 30 -60 c50 -98 134 -125
-223 -72 119 72 192 360 163 645 -21 206 -90 386 -214 559 -96 133 -97 129 48
-127 66 -1 132 -8 148 -14 15 -6 30 -9 33 -7 2 3 10 33 16 67 17 91 9 97 -140
-93 -64 -1 -129 -5 -144 -8 l-28 -6 0 287 c0 186 -4 293 -11 307 -10 19 -66 49
--91 47 -7 0 -24 -5 -37 -10z m215 -1171 c61 -180 81 -340 65 -524 -17 -188
--63 -309 -106 -274 -31 26 -35 86 -35 530 l1 445 21 -40 c12 -22 36 -83 54
-                                  -137z" />
-
-                        <path d="M1533 2221 c-40 -25 -53 -49 -53 -101 0 -34 6 -48 34 -76 28 -28 42
-                                  -34 76 -34 55 0 96 30 111 80 30 99 -81 186 -168 131z" />
-
-                        <path d="M2506 1888 c-43 -40 -38 -95 14 -152 l40 -43 -10 -131 c-16 -213 -49
--334 -107 -394 -32 -34 -57 -35 -87 -5 -22 22 -23 32 -30 222 -6 182 -8 201
--27 221 -23 24 -65 36 -98 27 -21 -5 -21 -9 -21 -203 l0 -197 -29 -41 c-79
--108 -191 -35 -191 124 0 125 44 237 120 308 64 60 107 78 200 85 l75 6 3 32
-c2 25 -3 39 -23 59 -25 25 -30 26 -98 21 -143 -12 -296 -117 -361 -246 -32
--63 -44 -110 -57 -220 -8 -68 -18 -110 -39 -150 -30 -61 -100 -161 -112 -161
--5 0 -8 159 -8 353 0 391 0 390 -64 403 -19 3 -44 3 -55 -1 -20 -6 -21 -12
--21 -219 0 -159 -4 -227 -15 -271 -39 -150 -121 -216 -172 -138 -14 22 -18 59
--21 217 -4 173 -6 193 -24 212 -22 24 -64 36 -97 27 -21 -5 -21 -9 -21 -195 0
--207 -6 -238 -59 -279 -50 -40 -128 -5 -152 69 -17 52 -5 194 22 267 17 44 40
-77 84 121 69 69 125 94 216 94 32 0 61 5 64 11 4 6 4 26 1 45 -15 75 -128 84
--263 19 -128 -60 -217 -168 -259 -310 -24 -82 -24 -223 0 -293 54 -159 213
--209 347 -109 l29 21 27 -26 c56 -54 128 -62 208 -24 28 13 58 31 68 40 16 16
-17 12 17 -80 l0 -96 -88 -93 c-91 -95 -115 -133 -138 -220 -64 -238 137 -417
-297 -265 59 56 69 108 69 343 l0 200 70 73 c38 40 82 93 97 116 15 24 29 45
-30 47 2 3 18 -9 36 -27 82 -79 209 -82 288 -6 l25 24 25 -26 c51 -54 140 -69
-214 -35 44 20 104 81 131 132 47 93 87 256 99 417 l7 82 85 0 c77 0 84 -2 78
--17 -4 -10 -23 -72 -42 -138 -33 -108 -36 -132 -37 -246 -1 -121 0 -127 26
--167 33 -50 73 -72 142 -79 65 -7 142 24 185 73 34 39 85 140 102 205 11 41
-10 49 -7 72 -47 64 -74 48 -108 -65 -22 -74 -35 -99 -67 -131 -33 -33 -43 -38
--66 -32 -92 22 -95 148 -13 456 28 105 28 107 10 137 -29 48 -58 62 -126 62
--107 0 -155 10 -164 35 -26 68 -124 98 -174 53z m-991 -1434 c-6 -37 -38 -69
--60 -60 -9 3 -22 21 -30 41 -35 81 -4 211 69 293 l21 24 3 -134 c2 -73 0 -147
-                                  -3 -164z" />
-                    </g>
-                </svg>
-            </a>
-        </div>
-
-        <article>
-            <div class="text-base text-left font-light dark:text-slate-100 leading-relaxed pb-[100px]">
-                <p class="text-base">Hey, I’m <span class="font-bold">Muhamad Fajar</span> <span
-                        class="italic">/fa&bull;jar/</span> — code wrangler, digital tinkerer,
-                    and full-time tech enthusiast based in <a href="https://en.wikipedia.org/wiki/Indonesia"
-                        class="underline decoration-lime-500" target="_blank">Indonesia</a>. By day, I lead the
-                    <a class="underline decoration-pink-500" aria-label="Event companion app"
-                        data-microtip-position="top" role="tooltip" href="https://www.loket.com/loket-x/">X</a>,
-                    <a class="underline decoration-violet-500" aria-label="OAuth2 service" data-microtip-position="top"
-                        role="tooltip" href="https://www.loket.com/login">Identity</a>, and
-                    <a class="underline decoration-amber-400" aria-label="Movie ticket aggregator"
-                        data-microtip-position="top" role="tooltip" href="https://screen.loket.com/">Screen</a> teams at
-                    <a href="https://loket.com" class="underline decoration-sky-500" target="_blank">LOKÉT</a> as a
-                    Technical Lead, crafting smooth, snappy, and user-loving experiences.
-                    With years of hands-on building and breaking (on purpose, I swear), I enjoy exploring new
-                    technologies and continuously learning, always curious about what’s possible.
-                    Got an idea, collab, or just wanna geek out? Hit me up: <span id="obfuscatedEmail"
-                        class="italic underline decoration-red-600"></span>
-                </p>
-                <p class="my-5 text-xs"><a href="https://www.muhfajar.blog"
-                        class="underline decoration-slate-400">blog</a> &bull;
-                    <a href="https://link.muhfajar.id/nostr" class="underline decoration-slate-400"
-                        target="_blank">nostr</a> &bull;
-                    <a href="https://link.muhfajar.id/bsky" class="underline decoration-slate-400"
-                        target="_blank">bsky</a> &bull;
-                    <a href="https://link.muhfajar.id/resume" class="underline decoration-slate-400"
-                        target="_blank">resumé</a> &bull;
-                    <a href="https://pgp.mit.edu/pks/lookup?search=muhfajar.email"
-                        class="underline decoration-slate-400" target="_blank">gpg</a>
-                </p>
-
-                <script>
-                    function decode(encoded) {
-                        return atob(encoded).split('').reverse().join('');
-                    }
-                </script>
-
-                <style>
-                    .email-link {
-                        transition: opacity 0.3s ease-in-out;
-                    }
-                </style>
-
-                <script>
-                    window.onload = () => {
-                        const emailSpan = document.getElementById("obfuscatedEmail");
-                        const secret = "bGlhbWUucmFqYWZodW1AdGNhdG5vYw==";
-
-                        // Matrix animation
-                        const chars = "01ΔΣΨΦΞ#@!*%$&+-/=<>^~?|▒▓░█▄";
-                        let matrixInterval = setInterval(() => {
-                            emailSpan.innerText = Array(20).fill(0).map(() => chars[Math.floor(Math.random() * chars.length)]).join("");
-                        }, 100);
-
-                        setTimeout(() => {
-                            clearInterval(matrixInterval);
-                            const decoded = decode(secret);
-                            emailSpan.innerHTML = `<a href="mailto:${decoded}" class="email-link">${decoded}</a>`;
-                            emailSpan.classList.add("italic", "underline", "decoration-red-600");
-                        }, 3000);
-                    };
-                </script>
+<body class="gradient-background shadow-text shadow-svg min-h-screen flex flex-col antialiased">
+    <div class="flex-grow flex items-center justify-center py-20">
+        <div class="px-10 sm:px-10 max-w-2xl w-full">
+            <div class="py-5 mx-[-7px]">
+                <a href="https://kbbi.web.id/fajar" target="_blank">
+                    <svg version="1.0" xmlns="http://www.w3.org/2000/svg" height="5em"
+                        viewBox="0 0 346.000000 264.000000" class="fill-black dark:fill-slate-100"
+                        preserveAspectRatio="xMidYMid meet">
+                        <g transform="translate(0.000000,264.000000) scale(0.100000,-0.100000)" stroke="none">
+                            <path
+                                d="M321 2389 c-18 -7 -21 -13 -15 -27 5 -9 9 -149 9 -311 l0 -294 -30 -10 c-53 -18 -53 -42 1 -105 l33 -39 3 -585 3 -584 30 -60 c50 -98 134 -125 223 -72 119 72 192 360 163 645 -21 206 -90 386 -214 559 -96 133 -97 129 48 127 66 -1 132 -8 148 -14 15 -6 30 -9 33 -7 2 3 10 33 16 67 17 91 9 97 -140 93 -64 -1 -129 -5 -144 -8 l-28 -6 0 287 c0 186 -4 293 -11 307 -10 19 -66 49 -91 47 -7 0 -24 -5 -37 -10z m215 -1171 c61 -180 81 -340 65 -524 -17 -188 -63 -309 -106 -274 -31 26 -35 86 -35 530 l1 445 21 -40 c12 -22 36 -83 54 -137z" />
+                            <path
+                                d="M1533 2221 c-40 -25 -53 -49 -53 -101 0 -34 6 -48 34 -76 28 -28 42 -34 76 -34 55 0 96 30 111 80 30 99 -81 186 -168 131z" />
+                            <path
+                                d="M2506 1888 c-43 -40 -38 -95 14 -152 l40 -43 -10 -131 c-16 -213 -49 -334 -107 -394 -32 -34 -57 -35 -87 -5 -22 22 -23 32 -30 222 -6 182 -8 201 -27 221 -23 24 -65 36 -98 27 -21 -5 -21 -9 -21 -203 l0 -197 -29 -41 c-79 -108 -191 -35 -191 124 0 125 44 237 120 308 64 60 107 78 200 85 l75 6 3 32 c2 25 -3 39 -23 59 -25 25 -30 26 -98 21 -143 -12 -296 -117 -361 -246 -32 -63 -44 -110 -57 -220 -8 -68 -18 -110 -39 -150 -30 -61 -100 -161 -112 -161 -5 0 -8 159 -8 353 0 391 0 390 -64 403 -19 3 -44 3 -55 -1 -20 -6 -21 -12 -21 -219 0 -159 -4 -227 -15 -271 -39 -150 -121 -216 -172 -138 -14 22 -18 59 -21 217 -4 173 -6 193 -24 212 -22 24 -64 36 -97 27 -21 -5 -21 -9 -21 -195 0 -207 -6 -238 -59 -279 -50 -40 -128 -5 -152 69 -17 52 -5 194 22 267 17 44 40 77 84 121 69 69 125 94 216 94 32 0 61 5 64 11 4 6 4 26 1 45 -15 75 -128 84 -263 19 -128 -60 -217 -168 -259 -310 -24 -82 -24 -223 0 -293 54 -159 213 -209 347 -109 l29 21 27 -26 c56 -54 128 -62 208 -24 28 13 58 31 68 40 16 16 17 12 17 -80 l0 -96 -88 -93 c-91 -95 -115 -133 -138 -220 -64 -238 137 -417 297 -265 59 56 69 108 69 343 l0 200 70 73 c38 40 82 93 97 116 15 24 29 45 30 47 2 3 18 -9 36 -27 82 -79 209 -82 288 -6 l25 24 25 -26 c51 -54 140 -69 214 -35 44 20 104 81 131 132 47 93 87 256 99 417 l7 82 85 0 c77 0 84 -2 78 -17 -4 -10 -23 -72 -42 -138 -33 -108 -36 -132 -37 -246 -1 -121 0 -127 26 -167 33 -50 73 -72 142 -79 65 -7 142 24 185 73 34 39 85 140 102 205 11 41 10 49 -7 72 -47 64 -74 48 -108 -65 -22 -74 -35 -99 -67 -131 -33 -33 -43 -38 -66 -32 -92 22 -95 148 -13 456 28 105 28 107 10 137 -29 48 -58 62 -126 62 -107 0 -155 10 -164 35 -26 68 -124 98 -174 53z m-991 -1434 c-6 -37 -38 -69 -60 -60 -9 3 -22 21 -30 41 -35 81 -4 211 69 293 l21 24 3 -134 c2 -73 0 -147 -3 -164z" />
+                        </g>
+                    </svg>
+                </a>
             </div>
-        </article>
+
+            <article>
+                <div class="text-base text-left font-light dark:text-slate-100 leading-relaxed">
+                    <p class="text-base">Hey, I'm <span class="font-bold">Muhamad Fajar</span> <span
+                            class="italic">/fa&bull;jar/</span> — a code wrangler, digital tinkerer, and professional
+                        geek
+                        based in <a href="https://en.wikipedia.org/wiki/Indonesia" class="underline decoration-lime-500"
+                            target="_blank">Indonesia</a>. By day, I lead the
+                        <a class="underline decoration-pink-500" aria-label="Event companion app"
+                            data-microtip-position="top" role="tooltip" href="https://www.loket.com/loket-x/">X</a>,
+                        <a class="underline decoration-violet-500" aria-label="OAuth2 service"
+                            data-microtip-position="top" role="tooltip" href="https://www.loket.com/login">Identity</a>,
+                        and
+                        <a class="underline decoration-amber-400" aria-label="Movie ticket aggregator"
+                            data-microtip-position="top" role="tooltip" href="https://screen.loket.com/">Screen</a>
+                        teams at
+                        <a href="https://loket.com" class="underline decoration-sky-500" target="_blank">LOKÉT</a> as a
+                        Tech Lead, making sure everything stays smooth, snappy, and easy to use.
+                        I've spent years building (and occasionally breaking) things on purpose, and I'm still just as
+                        curious about what's next.
+                        Got a cool idea, want to collab, or just feel like geeking out? Drop me a line: <span
+                            id="obfuscatedEmail" class="italic underline decoration-red-600"></span>
+                    </p>
+                    <p class="my-5 text-xs"><a href="https://www.muhfajar.blog"
+                            class="underline decoration-slate-400">blog</a> &bull;
+                        <a href="https://link.muhfajar.id/nostr" class="underline decoration-slate-400"
+                            target="_blank">nostr</a> &bull;
+                        <a href="https://link.muhfajar.id/bsky" class="underline decoration-slate-400"
+                            target="_blank">bsky</a> &bull;
+                        <a href="https://link.muhfajar.id/resume" class="underline decoration-slate-400"
+                            target="_blank">resumé</a> &bull;
+                        <a href="https://pgp.mit.edu/pks/lookup?search=muhfajar.email"
+                            class="underline decoration-slate-400" target="_blank">gpg</a>
+                    </p>
+
+                    <script>
+                        function decode(encoded) { return atob(encoded).split('').reverse().join(''); }
+                        window.onload = () => {
+                            const emailSpan = document.getElementById("obfuscatedEmail");
+                            const secret = "bGlhbWUucmFqYWZodW1AdGNhdG5vYw==";
+                            const chars = "01ΔΣΨΦΞ#@!*%$&+-/=<>^~?|▒▓░█▄";
+                            let matrixInterval = setInterval(() => {
+                                emailSpan.innerText = Array(20).fill(0).map(() => chars[Math.floor(Math.random() * chars.length)]).join("");
+                            }, 100);
+                            setTimeout(() => {
+                                clearInterval(matrixInterval);
+                                const decoded = decode(secret);
+                                emailSpan.innerHTML = `<a href="mailto:${decoded}" class="email-link">${decoded}</a>`;
+                                emailSpan.classList.add("italic", "underline", "decoration-red-600");
+                            }, 3000);
+                        };
+                    </script>
+                </div>
+            </article>
+        </div>
     </div>
 
-
-    <div class="absolute left-0 right-0 bottom-10">
+    <footer class="w-full pb-10">
         <div class="text-xs text-center font-light dark:text-slate-100">
-            &copy <!--suppress JSCheckFunctionSignatures -->
+            &copy
             <script>document.write(new Date().getFullYear())</script> &bull;
             <a href="https://creativecommons.org/licenses/by-nc/4.0/" target="_blank">CC BY-NC 4.0</a> &bull;
             <a href="https://github.com/muhfajar/id/commits/master" target="_blank" id="git" aria-label="Latest Changes"
                 data-microtip-position="right" role="tooltip">Latest Changes</a>
         </div>
-    </div>
+    </footer>
 
-    <!-- git -->
     <script>
         fetch('https://api.github.com/repos/muhfajar/id/commits', { mode: "cors" })
-            .then(
-                function (response) {
-                    if (response.status !== 200) {
-                        console.log('Looks like there was a problem. Status Code: ' +
-                            response.status);
-                        return;
-                    }
-
-                    response.json().then(function (data) {
-                        let gitLink = document.getElementById("git");
-                        gitLink.href = data[0].html_url;
-                        gitLink.innerText = data[0].sha.substring(0, 7);
-                        return false;
-                    });
-                }
-            )
-            .catch(function (err) {
-                console.log('Fetch Error :-S', err);
-            });
+            .then(res => res.status === 200 ? res.json() : Promise.reject(res.status))
+            .then(data => {
+                let gitLink = document.getElementById("git");
+                gitLink.href = data[0].html_url;
+                gitLink.innerText = data[0].sha.substring(0, 7);
+            })
+            .catch(err => console.log('Fetch Error:', err));
     </script>
-
-    <!-- Cloudflare Web Analytics -->
     <script defer src='https://static.cloudflareinsights.com/beacon.min.js'
-        data-cf-beacon='{"token": "5ed7a73fb0f24e9cb06b295908f045e1"}'></script><!-- End Cloudflare Web Analytics -->
+        data-cf-beacon='{"token": "5ed7a73fb0f24e9cb06b295908f045e1"}'></script>
 </body>
 
 </html>
