@@ -205,8 +205,16 @@
             .welcome-text {
                 color: var(--ascii-color);
                 margin: 0;
-                white-space: pre-wrap;
+                white-space: pre;
                 line-height: 1.25;
+                font-size: 11px;
+                overflow-x: auto;
+            }
+
+            @media (min-width: 640px) {
+                .welcome-text {
+                    font-size: 14px;
+                }
             }
 
             @keyframes blink {
