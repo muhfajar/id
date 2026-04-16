@@ -287,7 +287,8 @@ With years of hands-on building and breaking (on purpose, I swear), I enjoy expl
 <span class="highlight">Cloud:</span> AWS, GCP, Docker, Kubernetes`,
 
                 contact: `Got an idea, collab, or just wanna geek out?
-<span class="highlight">Email:</span> <a href="mailto:contact@muhfajar.email">contact@muhfajar.email</a>
+
+<span class="highlight">Email:</span> <a href="#" id="contact-link"></a>
 <span class="highlight">Blog:</span> <a href="https://www.muhfajar.blog" target="_blank">https://www.muhfajar.blog</a>`,
 
                 links: `<span class="highlight">Blog:</span> <a href="https://www.muhfajar.blog" target="_blank">https://www.muhfajar.blog</a>
@@ -346,6 +347,7 @@ With years of hands-on building and breaking (on purpose, I swear), I enjoy expl
 
                 if (command === 'contact') {
                     printOutput(content.contact);
+                    setTimeout(revealEmail, 0);
                     return;
                 }
 
@@ -404,6 +406,17 @@ With years of hands-on building and breaking (on purpose, I swear), I enjoy expl
 
             printWelcome();
             commandInput.focus();
+
+            function revealEmail() {
+                const link = document.getElementById('contact-link');
+                if (link) {
+                    const user = 'contact';
+                    const domain = 'muhfajar.email';
+                    link.textContent = user + '@' + domain;
+                    link.href = 'mailto:' + user + '@' + domain;
+                }
+            }
+            revealEmail();
         </script>
     </body>
 </html>
