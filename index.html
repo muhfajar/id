@@ -302,6 +302,23 @@ With years of hands-on building and breaking (on purpose, I swear), I enjoy expl
                 const div = document.createElement('div');
                 div.className = 'command-output ' + className;
                 div.innerHTML = text;
+                const emailLink = div.querySelector('#contact-link');
+                if (emailLink) {
+                    const chars = 'アイウエオカキクケコサシスセソタチツテトナニヌネノハヒフヘホマミムメモヤユヨラリルレロワヲン0123456789!?@#$%^&*';
+                    const parts = ['contact', 'muhfajar.email'];
+                    const email = parts[0] + String.fromCharCode(64) + parts[1];
+                    let iterations = 0;
+                    const maxIterations = 15;
+                    const matrixInterval = setInterval(() => {
+                        emailLink.textContent = Array(email.length).fill(0).map(() => chars[Math.floor(Math.random() * chars.length)]).join('');
+                        iterations++;
+                        if (iterations >= maxIterations) {
+                            clearInterval(matrixInterval);
+                            emailLink.textContent = email;
+                            emailLink.href = 'mailto:' + email;
+                        }
+                    }, 80);
+                }
                 output.appendChild(div);
             }
 
@@ -347,7 +364,6 @@ With years of hands-on building and breaking (on purpose, I swear), I enjoy expl
 
                 if (command === 'contact') {
                     printOutput(content.contact);
-                    setTimeout(revealEmail, 0);
                     return;
                 }
 
@@ -410,10 +426,11 @@ With years of hands-on building and breaking (on purpose, I swear), I enjoy expl
             function revealEmail() {
                 const link = document.getElementById('contact-link');
                 if (link) {
-                    const user = 'contact';
-                    const domain = 'muhfajar.email';
-                    link.textContent = user + '@' + domain;
-                    link.href = 'mailto:' + user + '@' + domain;
+                    const parts = ['contact', 'muhfajar.email'];
+                    const email = parts[0] + String.fromCharCode(64) + parts[1];
+                    const mailto = 'mailto:' + email;
+                    link.textContent = email;
+                    link.href = mailto;
                 }
             }
             revealEmail();
