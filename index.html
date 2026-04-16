@@ -284,6 +284,7 @@
                 skills: 'Technical skills & expertise',
                 contact: 'Get in touch',
                 links: 'Social links & resources',
+                version: 'Show site version from Git',
                 clear: 'Clear terminal',
                 whoami: 'Display user info',
                 date: 'Show current date & time',
@@ -295,9 +296,9 @@
 By day, I lead the <a href="https://www.loket.com/loket-x/" target="_blank">X</a>, <a href="https://www.loket.com/login" target="_blank">Identity</a>, and <a href="https://screen.loket.com/" target="_blank">Screen</a> teams at <a href="https://loket.com" target="_blank">LOKÉT</a> as a Technical Lead, crafting smooth, snappy, and user-loving experiences.
 With years of hands-on building and breaking (on purpose, I swear), I enjoy exploring new technologies and continuously learning, always curious about what's possible.`,
 
-                skills: `<span class="highlight">Languages:</span> JavaScript, TypeScript, Go, Python
-<span class="highlight">Frontend:</span> React, Next.js, Vue.js
-<span class="highlight">Backend:</span> Node.js, PostgreSQL, Redis, GraphQL
+                skills: `<span class="highlight">Languages:</span> Go, Python, Ruby, PHP
+<span class="highlight">Framework:</span> Django, Celery, Ruby on Rails, Hertz, Go-Zero, Prefect, Laravel
+<span class="highlight">Database:</span> PostgreSQL, Redis, MySQL, ClickHouse
 <span class="highlight">Cloud:</span> AWS, GCP, Docker, Kubernetes`,
 
                 contact: `Got an idea, collab, or just wanna geek out?
@@ -408,6 +409,23 @@ With years of hands-on building and breaking (on purpose, I swear), I enjoy expl
                         matrixText += chars[Math.floor(Math.random() * chars.length)];
                     }
                     printOutput('<span class="success">' + matrixText + '</span>');
+                    return;
+                }
+
+                if (command === 'version') {
+                    printOutput('<span class="dim">Fetching latest commit...</span>');
+                    fetch('https://api.github.com/repos/muhfajar/id/commits', { mode: 'cors' })
+                        .then(res => res.status === 200 ? res.json() : Promise.reject(res.status))
+                        .then(data => {
+                            const commit = data[0];
+                            const versionHtml = `<span class="highlight">Latest commit:</span> <a href="${commit.html_url}" target="_blank">${commit.sha.substring(0, 7)}</a>
+<span class="dim">${commit.commit.message}</span>
+<span class="dim">${commit.commit.author.name} - ${new Date(commit.commit.author.date).toLocaleDateString()}</span>`
+                            output.lastChild.innerHTML = versionHtml;
+                        })
+                        .catch(err => {
+                            output.lastChild.innerHTML = '<span class="error">Failed to fetch version info</span>';
+                        });
                     return;
                 }
 
