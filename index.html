@@ -279,11 +279,12 @@
             const output = document.getElementById('output');
 
             const commands = {
-                help: 'Show available commands',
                 about: 'Learn about me',
+                blog: 'Show latest blog post',
                 skills: 'Technical skills & expertise',
                 contact: 'Get in touch',
                 links: 'Social links & resources',
+                help: 'Show available commands',
                 version: 'Show site version from Git',
                 clear: 'Clear terminal',
                 whoami: 'Display user info',
@@ -425,6 +426,36 @@ With years of hands-on building and breaking (on purpose, I swear), I enjoy expl
                         })
                         .catch(err => {
                             output.lastChild.innerHTML = '<span class="error">Failed to fetch version info</span>';
+                        });
+                    return;
+                }
+
+                if (command === 'blog') {
+                    printOutput('<span class="dim">Fetching latest blog posts...</span>');
+                    fetch('https://www.muhfajar.blog/api/share/dsHMlEEQ0PZrOS?enablePagination=true', { mode: 'cors' })
+                        .then(res => res.status === 200 ? res.json() : Promise.reject(res.status))
+                        .then(data => {
+                            if (data && data.blocks && data.blocks.length > 1) {
+                                let blogHtml = '';
+                                for (let i = 1; i <= 5; i++) {
+                                    if (data.blocks[i]) {
+                                        const post = data.blocks[i];
+                                        blogHtml += `<span>${post.content}</span>
+<a href="https://www.muhfajar.blog/b/${post.id}" target="_blank">Read more</a>
+
+`;
+                                    }
+                                }
+                                blogHtml += `<span>---</span>
+<a href="https://www.muhfajar.blog" target="_blank">View all posts</a>
+`;
+                                output.lastChild.innerHTML = blogHtml || '<span class="error">No blog posts found</span>';
+                            } else {
+                                output.lastChild.innerHTML = '<span class="error">No blog posts found</span>';
+                            }
+                        })
+                        .catch(err => {
+                            output.lastChild.innerHTML = '<span class="error">Failed to fetch blog posts</span>';
                         });
                     return;
                 }
