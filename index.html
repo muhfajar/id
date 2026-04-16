@@ -286,10 +286,11 @@
                 links: 'Social links & resources',
                 help: 'Show available commands',
                 version: 'Show site version from Git',
-                clear: 'Clear terminal',
                 whoami: 'Display user info',
                 date: 'Show current date & time',
-                matrix: 'Experience the matrix'
+                matrix: 'Experience the matrix',
+                clear: 'Clear terminal',
+                exit: 'Close this tab'
             };
 
             const content = {
@@ -360,6 +361,12 @@ With years of hands-on building and breaking (on purpose, I swear), I enjoy expl
 
                 if (command === 'clear') {
                     output.innerHTML = '';
+                    return;
+                }
+
+                if (command === 'exit') {
+                    printOutput('<span class="dim">Closing tab...</span>');
+                    setTimeout(() => window.close(), 500);
                     return;
                 }
 
