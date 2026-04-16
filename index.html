@@ -142,7 +142,7 @@
             .prompt {
                 display: flex;
                 align-items: center;
-                margin-right: 8px;
+                margin-right: 0.7em;
                 flex-shrink: 0;
             }
 
@@ -186,7 +186,7 @@
 
             .command-echo {
                 color: var(--dim-color);
-                margin-left: 3px;
+                margin-left: 0.7em;
             }
 
             a {
@@ -476,7 +476,7 @@ With years of hands-on building and breaking (on purpose, I swear), I enjoy expl
             commandInput.addEventListener('keydown', function(e) {
                 if (e.key === 'Enter') {
                     const cmd = commandInput.value;
-                    printOutput(`<span class="prompt"><span class="prompt-user">dev</span><span class="prompt-at">@</span><span class="prompt-host">muhfajar</span><span class="prompt-path">:~</span><span class="prompt-symbol">$ <span class="command-echo">${cmd}</span></span></span>`);
+                    printOutput(`<span class="prompt"><span class="prompt-user">dev</span><span class="prompt-at">@</span><span class="prompt-host">muhfajar</span><span class="prompt-path">:~</span><span class="prompt-symbol">$<span class="command-echo">${cmd}</span></span></span>`);
                     executeCommand(cmd);
                     commandInput.value = '';
                     terminalBody.scrollTop = terminalBody.scrollHeight;
