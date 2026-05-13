@@ -285,6 +285,31 @@
             const terminalBody = document.getElementById('terminal-body');
             const commandInput = document.getElementById('command-input');
             const output = document.getElementById('output');
+            const historyKey = 'terminal-command-history';
+            let commandHistory = JSON.parse(localStorage.getItem(historyKey) || '[]').slice(-50);
+            let historyIndex = commandHistory.length;
+
+            function saveCommandHistory(command) {
+                if (!command || commandHistory[commandHistory.length - 1] === command) {
+                    return;
+                }
+                commandHistory.push(command);
+                commandHistory = commandHistory.slice(-50);
+                historyIndex = commandHistory.length;
+                localStorage.setItem(historyKey, JSON.stringify(commandHistory));
+            }
+
+            function recallCommandHistory(direction) {
+                if (commandHistory.length === 0) {
+                    return;
+                }
+
+                historyIndex = Math.max(0, Math.min(commandHistory.length, historyIndex + direction));
+                commandInput.value = commandHistory[historyIndex] || '';
+                requestAnimationFrame(() => {
+                    commandInput.setSelectionRange(commandInput.value.length, commandInput.value.length);
+                });
+            }
 
             const commands = {
                 about: 'Learn about me',
@@ -523,9 +548,22 @@ With years of hands-on building and breaking (on purpose, I swear), I enjoy expl
             }
 
             commandInput.addEventListener('keydown', function(e) {
+                if (e.key === 'ArrowUp') {
+                    e.preventDefault();
+                    recallCommandHistory(-1);
+                    return;
+                }
+
+                if (e.key === 'ArrowDown') {
+                    e.preventDefault();
+                    recallCommandHistory(1);
+                    return;
+                }
+
                 if (e.key === 'Enter') {
                     const cmd = commandInput.value;
                     printOutput(`<span class="prompt"><span class="prompt-user">dev</span><span class="prompt-at">@</span><span class="prompt-host">muhfajar</span><span class="prompt-path">:~</span><span class="prompt-symbol">$<span class="command-echo">${cmd}</span></span></span>`);
+                    saveCommandHistory(cmd.trim());
                     executeCommand(cmd);
                     commandInput.value = '';
                     terminalBody.scrollTop = terminalBody.scrollHeight;
