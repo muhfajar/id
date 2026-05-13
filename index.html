@@ -210,6 +210,14 @@
             .error { color: #ff7b72; }
             .info { color: #79c0ff; }
 
+            .progress-label {
+                color: var(--dim-color);
+            }
+
+            .progress-bar {
+                color: var(--highlight);
+            }
+
             .command-output {
                 margin: 0;
                 padding-bottom: 16px;
@@ -337,6 +345,40 @@ With years of hands-on building and breaking (on purpose, I swear), I enjoy expl
                     }, 80);
                 }
                 output.appendChild(div);
+                return div;
+            }
+
+            function createProgressOutput(label) {
+                const progressLine = printOutput('', 'dim');
+                let progress = 0;
+                const width = 20;
+
+                const render = () => {
+                    const filled = Math.round((progress / 100) * width);
+                    const empty = width - filled;
+                    progressLine.innerHTML = `<span class="progress-label">${label}</span> <span class="progress-bar">[${'█'.repeat(filled)}${'░'.repeat(empty)}]</span> ${progress}%`;
+                };
+
+                render();
+                const interval = setInterval(() => {
+                    progress = Math.min(progress + Math.floor(Math.random() * 12) + 4, 95);
+                    render();
+                }, 160);
+
+                return {
+                    complete(html) {
+                        clearInterval(interval);
+                        progress = 100;
+                        render();
+                        setTimeout(() => {
+                            progressLine.innerHTML = html;
+                        }, 120);
+                    },
+                    fail(html) {
+                        clearInterval(interval);
+                        progressLine.innerHTML = html;
+                    }
+                };
             }
 
             function printWelcome() {
@@ -421,7 +463,7 @@ With years of hands-on building and breaking (on purpose, I swear), I enjoy expl
                 }
 
                 if (command === 'version') {
-                    printOutput('<span class="dim">Fetching latest commit...</span>');
+                    const progress = createProgressOutput('Fetching latest commit');
                     fetch('https://api.github.com/repos/muhfajar/id/commits', { mode: 'cors' })
                         .then(res => res.status === 200 ? res.json() : Promise.reject(res.status))
                         .then(data => {
@@ -429,16 +471,16 @@ With years of hands-on building and breaking (on purpose, I swear), I enjoy expl
                             const versionHtml = `<span class="highlight">Latest commit:</span> <a href="${commit.html_url}" target="_blank">${commit.sha.substring(0, 7)}</a>
 <span class="dim">${commit.commit.message}</span>
 <span class="dim">${commit.commit.author.name} - ${new Date(commit.commit.author.date).toLocaleDateString()}</span>`
-                            output.lastChild.innerHTML = versionHtml;
+                            progress.complete(versionHtml);
                         })
                         .catch(err => {
-                            output.lastChild.innerHTML = '<span class="error">Failed to fetch version info</span>';
+                            progress.fail('<span class="error">Failed to fetch version info</span>');
                         });
                     return;
                 }
 
                 if (command === 'blog') {
-                    printOutput('<span class="dim">Fetching latest blog posts...</span>');
+                    const progress = createProgressOutput('Fetching latest blog posts');
                     fetch('https://www.muhfajar.blog/api/share/dsHMlEEQ0PZrOS?enablePagination=true', { mode: 'cors' })
                         .then(res => res.status === 200 ? res.json() : Promise.reject(res.status))
                         .then(data => {
@@ -456,13 +498,13 @@ With years of hands-on building and breaking (on purpose, I swear), I enjoy expl
                                 blogHtml += `<span>---</span>
 <a href="https://www.muhfajar.blog" target="_blank">View all posts</a>
 `;
-                                output.lastChild.innerHTML = blogHtml || '<span class="error">No blog posts found</span>';
+                                progress.complete(blogHtml || '<span class="error">No blog posts found</span>');
                             } else {
-                                output.lastChild.innerHTML = '<span class="error">No blog posts found</span>';
+                                progress.fail('<span class="error">No blog posts found</span>');
                             }
                         })
                         .catch(err => {
-                            output.lastChild.innerHTML = '<span class="error">Failed to fetch blog posts</span>';
+                            progress.fail('<span class="error">Failed to fetch blog posts</span>');
                         });
                     return;
                 }
